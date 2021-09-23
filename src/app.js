@@ -1,7 +1,9 @@
+import Questions from './components/QuestionsComponent'
+
 function App() {
   return (
-    <div>
-      <h1>MCQ Questions</h1>
+    <div className="app">
+      <Questions />
     </div>
   )
 }
