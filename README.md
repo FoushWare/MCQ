@@ -23,6 +23,25 @@ What i Wanna do
 
 https://foushware.github.io/MCQ/
 
+# To Run the project locally
+
+```
+$ npm install
+$ npm run dev
+
+```
+
+### 🏘️ Building Tools ⛏️
+
+i didn't use CreatReact app but i used my template consists of
+
+- husky
+- webPack 5
+- Babel
+- eslint
+- prettier
+- jest
+
 ## Travis_build
 
 - branch master  

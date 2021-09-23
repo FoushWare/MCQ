@@ -2,6 +2,18 @@
 import {questions} from 'questions'
 
 export default function Questions() {
+  const [currentQuestion, setCurrentQuestion] = React.useState(0)
+
+  //Go to the next question when click the answer button  .. when reach the last question show the Result score
+  const handleAnswerOptionClick = () => {
+    const nextQuestion = currentQuestion + 1
+    if (nextQuestion < questions.length) {
+      setCurrentQuestion(nextQuestion)
+    } else {
+      alert('You can see you score now')
+    }
+  }
+
   return (
     <>
       {false ? (
@@ -15,14 +27,17 @@ export default function Questions() {
               <span>Question 1</span>/{questions.length}
             </div>
             <div className="question-text">
-              This is where the question text should go
+              {questions[currentQuestion].questionText}
             </div>
           </div>
           <div className="answer-section">
-            <button>Answer 1</button>
-            <button>Answer 2</button>
-            <button>Answer 3</button>
-            <button>Answer 4</button>
+            {questions[currentQuestion].answerOptions.map(
+              (answerOption, index) => (
+                <button key={index} onClick={() => handleAnswerOptionClick()}>
+                  {answerOption.answerText}
+                </button>
+              ),
+            )}
           </div>
         </>
       )}
