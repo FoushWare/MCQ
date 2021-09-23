@@ -2,29 +2,39 @@
 import {questions} from 'questions'
 
 export default function Questions() {
+  //####Local Status
   const [currentQuestion, setCurrentQuestion] = React.useState(0)
+  const [showScore, setShowScore] = React.useState(false)
+  const [score, setScore] = React.useState(0)
 
+  //####HanleAnswer function
   //Go to the next question when click the answer button  .. when reach the last question show the Result score
-  const handleAnswerOptionClick = () => {
+  const handleAnswerOptionClick = isCorrect => {
+    // if the answer is correct update the score
+    if (isCorrect) {
+      setScore(score + 1)
+    }
+    // Handle going to the next Qusetion
     const nextQuestion = currentQuestion + 1
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion)
     } else {
-      alert('You can see you score now')
+      setShowScore(true)
     }
   }
-
+  //#####Render the Questions
   return (
     <>
-      {false ? (
+      {/* ####if the User Reached the final Qusetion Show the Final Score */}
+      {showScore ? (
         <div className="score-section">
-          You scored 1 out of {questions.length}
+          You scored {score} out of {questions.length}
         </div>
       ) : (
         <>
           <div className="question-section">
             <div className="question-count">
-              <span>Question 1</span>/{questions.length}
+              <span>{currentQuestion + 1}</span>/{questions.length}
             </div>
             <div className="question-text">
               {questions[currentQuestion].questionText}
@@ -33,7 +43,12 @@ export default function Questions() {
           <div className="answer-section">
             {questions[currentQuestion].answerOptions.map(
               (answerOption, index) => (
-                <button key={index} onClick={() => handleAnswerOptionClick()}>
+                <button
+                  key={index}
+                  onClick={() =>
+                    handleAnswerOptionClick(answerOption.isCorrect)
+                  }
+                >
                   {answerOption.answerText}
                 </button>
               ),
