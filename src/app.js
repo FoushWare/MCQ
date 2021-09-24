@@ -1,4 +1,5 @@
 import Questions from './components/QuestionsComponent'
+// import API from './config/api'
 
 function App() {
   return (

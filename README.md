@@ -4,10 +4,11 @@
 
 What i Wanna do
 
-- make React App with hard codded questions in array and make all the logic
-- store the questions in the MongoDB
-- fetch the questions from the DB to the FRONTEND app
-- write unit tests
+- 👻 make React App with hard codded questions in array and make all the logic
+- 🔀 Randomise the questions and querstions Answers
+- 🗃️ store the questions in the MongoDB
+- ✨ fetch the questions from the DB to the FRONTEND app
+- 🧪 write unit tests
 
 `States in the App`
 
