@@ -10,10 +10,9 @@ What i Wanna do
 - ✨ fetch the questions from the DB to the FRONTEND app
 - 🧪 write unit tests
 
-# Github pages for this Repo
+# Heroku link
 
-https://foushware.github.io/MCQ/
-
+https://reactmcq.herokuapp.com/
 # To Run the project locally
 
 ```
