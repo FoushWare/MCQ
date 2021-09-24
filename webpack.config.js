@@ -22,6 +22,7 @@ module.exports = {
     },
     compress: true,
     port: 9000,
+    historyApiFallback: true,
     hot: true,
   },
   plugins: [

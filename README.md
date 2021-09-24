@@ -10,16 +10,6 @@ What i Wanna do
 - ✨ fetch the questions from the DB to the FRONTEND app
 - 🧪 write unit tests
 
-`States in the App`
-
-- global
-  - student name
-  - student finalScore
-- local
-  - currentQuestion number
-  - student current score
-  - questionCount for questions count
-
 # Github pages for this Repo
 
 https://foushware.github.io/MCQ/

@@ -1,11 +1,15 @@
 /* eslint-disable no-constant-condition */
-// import { questions } from 'questions'
 import API from '../config/api'
 import {shuffle} from '../shared/utils'
+// import { useHistory, Link } from "react-router-dom";
+
 export default function Questions() {
+  // let history = useHistory();
+
   const [apiQuestions, setApiQuestions] = React.useState({})
 
   React.useEffect(() => {
+    //#### Get the questions from the DB
     const getQuestions = async () => {
       const res = await API.get('questions')
         .then(res => {

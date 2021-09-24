@@ -1,11 +1,17 @@
 import Questions from './components/QuestionsComponent'
-// import API from './config/api'
+import Welcome from './components/Welcome'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="app">
-      <Questions />
-    </div>
+    <Router>
+      <div className="app">
+        <Switch>
+          <Route path="/questions" component={Questions} />
+          <Route path="/" component={Welcome} />
+        </Switch>
+      </div>
+    </Router>
   )
 }
 
